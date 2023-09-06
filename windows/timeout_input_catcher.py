@@ -1,5 +1,5 @@
 from inputimeout import inputimeout, TimeoutOccurred
-
+import sys
 
 
 def write_to_file(file_name, content):
@@ -12,8 +12,12 @@ def write_to_file(file_name, content):
 
 
 if __name__ == "__main__":
+    timeout = 15
+    if len(sys.argv) > 1:
+        parameter = sys.argv[1]
+        timeout = int(parameter)
     try:
-        c = inputimeout(prompt="Enter y to continue training,Enter s to stop training:", timeout=15)
+        c = inputimeout(prompt="Enter y to continue training,Enter s to stop training:", timeout=timeout)
     except TimeoutOccurred:
         c = 'timeout'
-    write_to_file("command.txt", c)
+    write_to_file("input.tmp", c)

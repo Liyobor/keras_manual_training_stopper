@@ -8,7 +8,7 @@ This project offers a straightforward method to manually decide whether to conti
 ### Features
 
 1. After a specified epoch, a terminal window will pop up after each training completion to inquire if you wish to continue the training.
-2. Users have 15 seconds (configurable) to decide whether to continue or stop training.
+2. Decide within the specified time whether to continue or stop training.
 3. If no response is received, training will automatically continue.
 
 ### Usage
@@ -21,13 +21,14 @@ from manual_training_stopper_callback import ManualTrainingStopperCallback
 
 model.fit(
     # ... (other training parameters)
-    callbacks=[ManualTrainingStopperCallback(model, prompt_after_epoch=15)]
+    callbacks=[ManualTrainingStopperCallback(model, prompt_after_epoch=15,timeout = 120)]
 )
 ```
 
 ### Options
 
 prompt_after_epoch: From which epoch the prompt will start appearing (default is 20).
+timeout: Time in seconds to wait for a user response (default is 15 seconds).
 
 
 ## 中文文檔
@@ -37,7 +38,7 @@ prompt_after_epoch: From which epoch the prompt will start appearing (default is
 ### 功能
 
 1. 在指定的epoch後，每次訓練完成後會跳出終端機視窗詢問是否繼續訓練。
-2. 使用者有15秒鐘(可設定)的時間決定是否要繼續訓練或停止。
+2. 指定的時間內決定是否要繼續訓練或停止。
 3. 若無回應，訓練會自動繼續。
 
 
@@ -58,3 +59,4 @@ model.fit(
 ### 選項
 
 prompt_after_epoch: 從第幾個epoch開始彈出提示 (預設為20)。
+timeout: 等待使用者回應的時間，單位為秒 (預設為15秒)。
