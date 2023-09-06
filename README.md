@@ -28,6 +28,7 @@ model.fit(
 ### Options
 
 prompt_after_epoch: From which epoch the prompt will start appearing (default is 20).
+
 timeout: Time in seconds to wait for a user response (default is 15 seconds).
 
 
@@ -52,11 +53,12 @@ from manual_training_stopper_callback import ManualTrainingStopperCallback
 
 model.fit(
     # ... (其他訓練參數)
-    callbacks=[ManualTrainingStopperCallback(model,prompt_after_epoch = 15)]
+    callbacks=[ManualTrainingStopperCallback(model,prompt_after_epoch = 15,timeout = 120)]
 )
 ```
 
 ### 選項
 
 prompt_after_epoch: 從第幾個epoch開始彈出提示 (預設為20)。
+
 timeout: 等待使用者回應的時間，單位為秒 (預設為15秒)。
