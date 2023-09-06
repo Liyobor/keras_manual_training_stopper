@@ -1,0 +1,1 @@
+# keras_manual_training_stopper
