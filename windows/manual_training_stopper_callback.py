@@ -6,9 +6,8 @@ class ManualTrainingStopperCallback(keras.callbacks.Callback):
     def __init__(self,model,prompt_after_epoch=20):
         super(ManualTrainingStopperCallback, self).__init__()
         self.prompt_after_epoch = prompt_after_epoch
-        self.continue_training = True
-        self.button = None
         self.model = model
+        
     def on_epoch_end(self, epoch, logs={}):
         if epoch < self.prompt_after_epoch:
             return
