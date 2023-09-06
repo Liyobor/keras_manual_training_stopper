@@ -11,6 +11,25 @@ This project offers a straightforward method to manually decide whether to conti
 2. Decide within the specified time whether to continue or stop training.
 3. If no response is received, training will automatically continue.
 
+### Installation
+
+Before utilizing this project, ensure you have the required library:
+
+```
+inputimeout
+keras
+```
+
+To install the inputimeout library, you can use pip:
+
+```
+pip install inputimeout
+```
+
+#### Note:
+
+Before using this project, please ensure you have an appropriate version of keras installed.
+
 ### Usage
 
 1. Add manual_training_stopper_callback.py and timeout_input_catcher.py to your project.
@@ -42,6 +61,25 @@ timeout: Time in seconds to wait for a user response (default is 15 seconds).
 2. 指定的時間內決定是否要繼續訓練或停止。
 3. 若無回應，訓練會自動繼續。
 
+
+### 安裝
+
+在使用此項目之前，請確保您已安裝以下必要的函式庫：
+
+```
+inputimeout
+keras
+```
+
+要安裝inputimeout,可以使用'pip':
+
+```
+pip install inputimeout
+```
+
+#### 註記
+
+使用此項目前,請自行安裝合適版本的keras
 
 ### 使用方法
 
